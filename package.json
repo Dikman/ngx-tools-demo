@@ -8,7 +8,10 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "doc": "npx compodoc -p ./projects/ngx-tools/tsconfig.lib.json -d docs -n \"ngx-tools library\" -s -o --watch --theme stripe --disablePrivate --disableProtected --disableInternal --disableLifeCycleHooks"
+    "doc": "npx compodoc -p ./projects/ngx-tools/tsconfig.lib.json -d docs -n \"ngx-tools library\" -s -o --watch --theme stripe --disablePrivate --disableProtected --disableInternal --disableLifeCycleHooks",
+    "lib:build": "ng build ngx-tools",
+    "lib:watch": "ng build ngx-tools --watch",
+    "publish": "npm run lib:build && cd dist/ngx-tools && npm pack && npm publish"
   },
   "private": true,
   "dependencies": {
