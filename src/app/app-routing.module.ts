@@ -1,11 +1,34 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+import { DebounceComponent } from './pages/debounce/debounce.component';
+import { SingletonComponent } from './pages/singleton/singleton.component';
+import { RandomComponent } from './pages/random/random.component';
 
-
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: 'random',
+    component: RandomComponent
+  },
+  {
+    path: 'debounce',
+    component: DebounceComponent
+  },
+  {
+    path: 'singleton',
+    component: SingletonComponent
+  },
+  {
+    path: '**',
+    redirectTo: 'random'
+  }
+];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [
+    RouterModule.forRoot(routes)
+  ],
+  exports: [
+    RouterModule
+  ]
 })
 export class AppRoutingModule { }

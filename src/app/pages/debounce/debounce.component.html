@@ -1,0 +1,81 @@
+<mat-card>
+  <mat-card-title-group>
+    <mat-card-title class="type-title">Debounce</mat-card-title>
+    <mat-card-subtitle class="type-subtitle">method decorator</mat-card-subtitle>
+  </mat-card-title-group>
+
+  <mat-card-content>
+    <p>
+      <code>@Debounce([wait, [immediate]])</code> creates a debounced function that delays
+      invoking function until after wait milliseconds have elapsed since the last time
+      the debounced function was invoked.
+    </p>
+
+    <h4>Arguments</h4>
+
+    <table class="arguments-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Optional</th>
+          <th>Default</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>wait</td>
+          <td>number</td>
+          <td class="text-center">&radic;</td>
+          <td>150</td>
+          <td>
+            At the end of the <code>wait</code> interval, the function will be called with
+            the arguments that were passed most recently to the debounced function.
+          </td>
+        </tr>
+        <tr>
+          <td>immediate</td>
+          <td>boolean</td>
+          <td class="text-center">&radic;</td>
+          <td>false</td>
+          <td>
+            Pass <code>true</code> for the <code>immediate</code> argument to cause <code>debounce</code>
+            to trigger the function on the leading instead of the trailing edge of the <code>wait</code>
+            interval. Useful in circumstances like preventing accidental double-clicks on a "submit"
+            button from firing a second time.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4>Example</h4>
+
+    <pre><code [highlight]="example" [languages]="['typescript']"></code></pre>
+
+    <h4>Life Demo</h4>
+
+    <p>
+      Open the <strong>Developer Console</strong> panel and open the <strong>Console</strong> tab. 
+      You can see a result there when you are moving the mouse pointer over the event listener area below.
+    </p>
+
+    <mat-grid-list cols="3" rowHeight="150" gutterSize="10">
+      <mat-grid-tile class="track-race">
+        <h4 class="title">Event listener without <code>@Debounce()</code></h4>
+        <div class="track-area" (mousemove)="eventWithoutDebounce($event)"></div>
+      </mat-grid-tile>
+
+      <mat-grid-tile class="track-race">
+        <h4 class="title">Event listener with <code>@Debounce(150, false)</code></h4>
+        <div class="track-area" (mousemove)="eventWithDebounce($event)"></div>
+      </mat-grid-tile>
+
+      <mat-grid-tile class="track-race">
+        <h4 class="title">Event listener with <code>@Debounce(150, true)</code></h4>
+        <div class="track-area" (mousemove)="eventWithImmediateDebounce($event)"></div>
+      </mat-grid-tile>
+    </mat-grid-list>
+
+  </mat-card-content>
+</mat-card>

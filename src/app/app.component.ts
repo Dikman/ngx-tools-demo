@@ -1,3 +1,4 @@
+import { MediaMatcher } from '@angular/cdk/layout';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ngx-tools-demo';
+  protected mobile: MediaQueryList;
+
+  constructor(media: MediaMatcher) {
+    this.mobile = media.matchMedia('(max-width: 599px)');
+  }
+
 }

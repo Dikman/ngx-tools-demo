@@ -1,0 +1,121 @@
+<mat-card>
+  <mat-card-title-group>
+    <mat-card-title class="type-title">Random</mat-card-title>
+    <mat-card-subtitle class="type-subtitle">helper</mat-card-subtitle>
+  </mat-card-title-group>
+
+  <mat-card-content>
+    <mat-tab-group>
+      <mat-tab label="number">
+        <p>
+          <code>Random.number(min, max)</code> generates a random integer
+          from a given range (a result can include at both the minimum and
+          the maximum of the range).
+        </p>
+
+        <h4>Arguments</h4>
+
+        <table class="arguments-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Type</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>min</td>
+              <td>number</td>
+              <td>Low integer value of the range</td>
+            </tr>
+            <tr>
+              <td>max</td>
+              <td>number</td>
+              <td>High integer value of the range</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4>Example</h4>
+
+        <pre><code [highlight]="numberExample" [languages]="['typescript']"></code></pre>
+
+        <h4>Life Demo</h4>
+
+        <p>
+          Open the <strong>Developer Console</strong> panel and open the <strong>Console</strong> tab.
+          You can see a result there when you are moving the mouse pointer over the event listener area below.
+        </p>
+
+        <button mat-stroked-button color="primary" (click)="generateRandomNumber()">Click here for generate a new value</button>
+
+        <p *ngIf="randomNumber !== undefined">Last generated value: <code>{{randomNumber}}</code></p>
+      </mat-tab>
+
+      <mat-tab label="color">
+        <p>
+          <code>Random.color()</code> generates a random color as a string starts with the '#' char.
+        </p>
+
+        <h4>Example</h4>
+
+        <pre><code [highlight]="colorExample" [languages]="['typescript']"></code></pre>
+
+        <h4>Life Demo</h4>
+
+        <p>
+          Open the <strong>Developer Console</strong> panel and open the <strong>Console</strong> tab.
+          You can see a result there when you are moving the mouse pointer over the event listener area below.
+        </p>
+
+        <button mat-stroked-button color="primary" (click)="generateRandomColor()">Click here for generate a new value</button>
+
+        <p *ngIf="randomColor !== undefined">Last generated value: <code>{{randomColor}}</code></p>
+      </mat-tab>
+
+      <mat-tab label="string">
+        <p>
+          <code>Random.string([length])</code> generates a random string of a given length.
+        </p>
+
+        <h4>Arguments</h4>
+
+        <table class="arguments-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Type</th>
+              <th>Optional</th>
+              <th>Default</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>length</td>
+              <td>number</td>
+              <td class="text-center">&radic;</td>
+              <td>16</td>
+              <td>Length of a required string</td>
+            </tr>
+        </table>
+
+        <h4>Example</h4>
+
+        <pre><code [highlight]="stringExample" [languages]="['typescript']"></code></pre>
+
+        <h4>Life Demo</h4>
+
+        <p>
+          Open the <strong>Developer Console</strong> panel and open the <strong>Console</strong> tab.
+          You can see a result there when you are moving the mouse pointer over the event listener area below.
+        </p>
+
+        <button mat-stroked-button color="primary" (click)="generateRandomString()">Click here for generate a new value</button>
+
+        <p *ngIf="randomString !== undefined">Last generated value: <code>{{randomString}}</code></p>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card-content>
+</mat-card>
