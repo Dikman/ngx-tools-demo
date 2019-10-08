@@ -1,24 +1,109 @@
 # NgxTools
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.8.
+Usefull decorators and helpers for Angular project.
 
-## Code scaffolding
+[![npm version](https://badge.fury.io/js/%40dikman%2Fngx-tools.svg)](https://badge.fury.io/js/%40dikman%2Fngx-tools)
 
-Run `ng generate component component-name --project ngx-tools` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-tools`.
-> Note: Don't forget to add `--project ngx-tools` or else it will be added to the default project in your `angular.json` file. 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-## Build
 
-Run `ng build ngx-tools` to build the project. The build artifacts will be stored in the `dist/` directory.
+- [Install](#install)
+- [Usage](#usage)
+  - [Decorators](#decorators)
+    - [Debounce](#debounce)
+    - [Singleton](#singleton)
+  - [Random Helper](#random-helper)
+    - [number(min, max)](#numbermin-max)
+    - [color()](#color)
+    - [string([length])](#stringlength)
 
-## Publishing
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-After building your library with `ng build ngx-tools`, go to the dist folder `cd dist/ngx-tools` and run `npm publish`.
+## Install
 
-## Running unit tests
+`npm install --save @dikman/ngx-tools`
 
-Run `ng test ngx-tools` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Usage
 
-## Further help
+Decorators are exported as start case.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+`import { Debounce } from '@dikman/ngx-tools';`
+
+### Decorators
+
+These decorators are included in the package.
+
+-   `Debounce`
+-   `Singleton`
+
+#### Debounce
+
+Decorator that creates a debounced function that delays invoking function
+until after wait milliseconds have elapsed since the last time the debounced
+function was invoked.
+
+```typescript
+import { Debounce } from '@dikman/ngx-tools';
+
+export class ExampleComponent {
+    @Debounce() protected searchSomeData(): void {
+        ...
+    }
+}
+```
+
+#### Singleton
+
+Decorator that restricts the instantiation of a class to one "single"
+instance. This is useful when exactly one object is needed to coordinate
+actions across the system.
+
+```typescript
+    import { Singleton } from '@dikman/ngx-tools';
+
+    @Injectable({
+        providedIn: 'root'
+    })
+    @Singleton()
+    export class ExampleService {
+        constructor() {
+            ...
+        }
+    }
+```
+
+### Random Helper
+
+Collection of functions for generating a random value of primitive types.
+
+#### number(min, max)
+  
+Generates a random integer from a given range (a result can include
+at both the minimum and the maximum of the range).
+
+```typescript
+    import { Random } from '@dikman/ngx-tools';
+
+    console.log(Random.number(5, 25));
+```
+
+#### color()
+
+Generates a random color as a string starts with the '#' char.
+
+```typescript
+    import { Random } from '@dikman/ngx-tools';
+
+    console.log(Random.color());
+```
+
+#### string([length])
+
+Generates a random string of a given length.
+
+```typescript
+    import { Random } from '@dikman/ngx-tools';
+
+    console.log(Random.string(32));
+```

@@ -2,8 +2,7 @@ import { Component } from '@angular/core';
 import { Random } from '@dikman/ngx-tools';
 
 @Component({
-  templateUrl: './random.component.html',
-  styleUrls: ['./random.component.scss']
+  templateUrl: './random.component.html'
 })
 export class RandomComponent {
 
@@ -12,7 +11,7 @@ export class RandomComponent {
   `.trim().replace(/(^|[\n\r])\s{4}/g, '$1');
 
   protected colorExample = `
-    console.log(Random.color(5, 25));
+    console.log(Random.color());
   `.trim().replace(/(^|[\n\r])\s{4}/g, '$1');
 
   protected stringExample = `

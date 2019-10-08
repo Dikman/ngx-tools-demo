@@ -1,12 +1,12 @@
 {
   "name": "@dikman/ngx-tools",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "peerDependencies": {
     "@angular/common": "^8.2.8",
     "@angular/core": "^8.2.8"
   },
   "author": "Dmitriy Kuznetsov <dmitriy.v.kuznetsov@gmail.com>",
   "description": "Usefull decorators for Angular project.",
-  "keywords": ["Angular", "Decorators"],
+  "keywords": ["Angular", "Decorators", "Helper", "Helpers", "TypeScript"],
   "license": "MIT"
 }
