@@ -20,6 +20,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HighlightModule } from 'ngx-highlightjs';
 
 import typescript from 'highlight.js/lib/languages/typescript';
+import { TestComponent } from './pages/test/test.component';
+import { ChecksumComponent } from './pages/checksum/checksum.component';
 
 export function hljsLanguages() {
   return [
@@ -33,6 +35,8 @@ export function hljsLanguages() {
     DebounceComponent,
     SingletonComponent,
     RandomComponent,
+    TestComponent,
+    ChecksumComponent,
   ],
   imports: [
     BrowserModule,

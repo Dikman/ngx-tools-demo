@@ -6,7 +6,8 @@ describe('Debounce decorator', () => {
     class SomeDummyClass {
       public counter = 0;
 
-      @Debounce(150, false) public increment() {
+      @Debounce(150, false)
+      public increment() {
         this.counter++;
       }
     }
@@ -34,7 +35,8 @@ describe('Debounce decorator', () => {
     class SomeDummyClass {
       public counter = 0;
 
-      @Debounce(150, true) public increment() {
+      @Debounce(150, true)
+      public increment() {
         this.counter++;
       }
     }

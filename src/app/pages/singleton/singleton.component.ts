@@ -1,11 +1,15 @@
 import { Component } from '@angular/core';
+import { TrimExample } from 'src/app/decorators/trim-example.decorator';
 
 @Component({
   templateUrl: './singleton.component.html'
 })
 export class SingletonComponent {
 
+  @TrimExample()
   protected example = `
+    import { Singleton } from '@dikman/ngx-tools';
+
     @Injectable({
       providedIn: 'root'
     })
@@ -15,6 +19,6 @@ export class SingletonComponent {
         ...
       }
     }
-  `.trim().replace(/(^|[\n\r])\s{4}/g, '$1');
+  `;
 
 }

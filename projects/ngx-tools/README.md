@@ -17,6 +17,7 @@ Usefull decorators and helpers for Angular project.
     - [number(min, max)](#numbermin-max)
     - [color()](#color)
     - [string([length])](#stringlength)
+  - [Checksum Helper](#checksum-helper)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -47,7 +48,8 @@ function was invoked.
 import { Debounce } from '@dikman/ngx-tools';
 
 export class ExampleComponent {
-    @Debounce() protected searchSomeData(): void {
+    @Debounce()
+    protected searchSomeData(): void {
         ...
     }
 }
@@ -106,4 +108,14 @@ Generates a random string of a given length.
     import { Random } from '@dikman/ngx-tools';
 
     console.log(Random.string(32));
+```
+
+### Checksum Helper
+
+Calculates checksum based on 24 bits polynom.
+
+```typescript
+    import { crc24 } from '@dikman/ngx-tools';
+
+    console.log(crc24('Some string'));
 ```

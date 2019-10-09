@@ -13,9 +13,9 @@
     "lib:watch": "ng build ngx-tools --watch",
     "lib:test": "ng test ngx-tools",
     "lib:lint": "ng lint ngx-tools",
-    "lib:publish":  "doctoc ./projects/ngx-tools/README.md && npm run lib:build && cp ./projects/ngx-tools/CHANGELOG.md ./dist/ngx-tools/CHANGELOG.md && cd ./dist/ngx-tools && npm pack && npm publish --access public"
+    "lib:readme-contents": "doctoc ./projects/ngx-tools/README.md",
+    "lib:publish": "npm run lib:readme-contents && npm run lib:build && cp ./projects/ngx-tools/CHANGELOG.md ./dist/ngx-tools/CHANGELOG.md && cd ./dist/ngx-tools && npm pack && npm publish --access public"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "~8.2.4",
     "@angular/cdk": "~8.2.2",
